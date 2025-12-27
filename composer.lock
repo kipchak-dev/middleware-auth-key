@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "29353f78164608ceaf339fec281ade04",
+    "content-hash": "9c28a360ea5ac3d4064b48a13a9206ed",
     "packages": [
         {
             "name": "cuyz/valinor",
@@ -142,7 +142,7 @@
         },
         {
             "name": "kipchak/core",
-            "version": "2.x-dev",
+            "version": "2.0",
             "source": {
                 "type": "git",
                 "url": "https://1x.ax/mamluk/kipchak/core",
@@ -179,16 +179,15 @@
         },
         {
             "name": "kipchak/driver-config",
-            "version": "dev-master",
+            "version": "1.0",
             "source": {
                 "type": "git",
                 "url": "https://1x.ax/mamluk/kipchak/drivers/config",
-                "reference": "20867eb0bdf56da07e60de8e52372a91f883c7f7"
+                "reference": "2b6ca0d5edf001c7e4836b0e4a1c170c28e7ccd9"
             },
             "require": {
-                "kipchak/core": "2.x-dev"
+                "kipchak/core": "^2"
             },
-            "default-branch": true,
             "type": "middleware",
             "autoload": {
                 "psr-4": {
@@ -208,22 +207,21 @@
                 "http",
                 "microservices"
             ],
-            "time": "2025-12-25T09:56:25+00:00"
+            "time": "2025-12-27T03:47:52+00:00"
         },
         {
             "name": "kipchak/driver-logger",
-            "version": "dev-master",
+            "version": "1.0",
             "source": {
                 "type": "git",
                 "url": "https://1x.ax/mamluk/kipchak/drivers/logger",
-                "reference": "110b161cfeb20ebe6bcf44220e8755ab7951e222"
+                "reference": "48a49665d65c30e166c0977372aa224275abcc76"
             },
             "require": {
-                "kipchak/core": "2.x-dev",
-                "kipchak/driver-config": "dev-master",
+                "kipchak/core": "^2",
+                "kipchak/driver-config": "^1",
                 "monolog/monolog": "^3.9"
             },
-            "default-branch": true,
             "type": "driver",
             "autoload": {
                 "psr-4": {
@@ -243,7 +241,7 @@
                 "http",
                 "microservices"
             ],
-            "time": "2025-12-25T10:01:36+00:00"
+            "time": "2025-12-27T03:56:30+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -1691,11 +1689,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "kipchak/core": 20,
-        "kipchak/driver-config": 20,
-        "kipchak/driver-logger": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {},
