@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Kipchak\Middleware\Auth\Handlers;
+namespace Kipchak\Middleware\Auth\Key\Handlers;
 
 use Kipchak\Core\Components\Http;
 use Psr\Container\ContainerInterface;
@@ -10,7 +10,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Slim\Psr7\Response;
 use Kipchak\Driver\Config\Config;
 
-class AuthKey
+class ApiKey
 {
     public $container;
 
@@ -30,28 +30,28 @@ class AuthKey
      */
     public function __invoke(ServerRequestInterface $request, RequestHandlerInterface $handler): Response
     {
-        $authConfig = Config::get('kipchak.auth');
+        $authConfig = Config::get('kipchak.auth.key');
 
 
         $response = new Response();
 
         if (
-            (isset($authConfig['key']['ignore_options']) && $request->getMethod() === 'OPTIONS' && $authConfig['key']['ignore_options']) ||
-            (isset($authConfig['key']['ignore_paths']) && in_array($request->getUri()->getPath(), $authConfig['key']['ignore_paths']))
+            (isset($authConfig['ignore_options']) && $request->getMethod() === 'OPTIONS' && $authConfig['ignore_options']) ||
+            (isset($authConfig['ignore_paths']) && in_array($request->getUri()->getPath(), $authConfig['ignore_paths']))
         ) {
             $response = $handler->handle($request);
 
             return $response;
         }
 
-        $headerToCheck = $authConfig['key']['header'];
-        $queryParamToCheck = $authConfig['key']['query_param'];
+        $headerToCheck = $authConfig['header'];
+        $queryParamToCheck = $authConfig['query_param'];
 
         $key = isset($request->getHeader($headerToCheck)[0]) ?
             $request->getHeader('apikey')[0] :
             Http\Request::getQueryParam($request, $queryParamToCheck );
 
-        if (isset($authConfig['key']['authorised_keys'][$key])) {
+        if (isset($authConfig['authorised_keys'][$key])) {
             // Key matched!
             $response = $handler->handle($request);
 
