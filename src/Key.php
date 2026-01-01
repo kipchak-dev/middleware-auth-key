@@ -5,6 +5,7 @@ namespace Kipchak\Middleware\Auth\Key;
 use Kipchak\Core\Interfaces;
 use Kipchak\Driver\Config\Config;
 use Kipchak\Core\Components\App;
+use Kipchak\Middleware\Auth\Key\Handlers\ApiKey;
 
 class Key implements Interfaces\Middleware
 {
@@ -12,10 +13,10 @@ class Key implements Interfaces\Middleware
     {
         $container = $app->getContainer();
         if (!empty(Config::get('kipchak.auth.key'))) {
-            $auth = Config::get('kipchak.auth');
+            $auth = Config::get('kipchak.auth.key');
             if ($auth['enabled']) {
                 // Enable Key based auth globally
-                $app->add(new AuthKey($container));
+                $app->add(new ApiKey($container));
 
             }
         }
