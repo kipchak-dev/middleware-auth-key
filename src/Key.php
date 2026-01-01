@@ -4,7 +4,7 @@ namespace Kipchak\Middleware\Auth\Key;
 
 use Kipchak\Core\Interfaces;
 use Kipchak\Driver\Config\Config;
-use Slim\App;
+use Kipchak\Core\Components\App;
 
 class Key implements Interfaces\Middleware
 {
