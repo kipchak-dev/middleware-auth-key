@@ -211,11 +211,11 @@
         },
         {
             "name": "kipchak/driver-logger",
-            "version": "1.11",
+            "version": "1.12",
             "source": {
                 "type": "git",
                 "url": "https://1x.ax/mamluk/kipchak/drivers/logger",
-                "reference": "f84667a2a225cb0754801c574a7658191d16141e"
+                "reference": "c2922cab1ba7f5bbab992b7a578fe909c2915f7f"
             },
             "require": {
                 "kipchak/core": "^2",
@@ -241,7 +241,7 @@
                 "http",
                 "microservices"
             ],
-            "time": "2026-03-02T07:38:59+00:00"
+            "time": "2026-03-10T08:39:04+00:00"
         },
         {
             "name": "laravel/serializable-closure",
