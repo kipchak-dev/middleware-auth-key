@@ -48,10 +48,10 @@ class ApiKey
         $queryParamToCheck = $authConfig['query_param'];
 
         $key = isset($request->getHeader($headerToCheck)[0]) ?
-            $request->getHeader('apikey')[0] :
+            $request->getHeader($headerToCheck)[0] :
             Http\Request::getQueryParam($request, $queryParamToCheck );
 
-        if (isset($authConfig['authorised_keys'][$key])) {
+        if (!empty($key) && isset($authConfig['authorised_keys'][$key])) {
             // Key matched!
             $response = $handler->handle($request);
 
