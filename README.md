@@ -14,6 +14,21 @@ Then just ensure you have appropriate settings configured in `kipchak.auth.key.p
 
 For a sample, please see: https://1x.ax/mamluk/kipchak/starter/~files/master/config/kipchak.auth.key.php.
 
+## Responses
+
+A request without an authorised key gets a 401 with the message `Missing or invalid key` and the status
+`UNAUTHENTICATED`, the same status kipchak/middleware-error gives a 401 (from kipchak/core's `ErrorStatus`).
+
+**Upgrading to 1.41:** it requires kipchak/core 3.18, and the status of that 401 is `UNAUTHENTICATED` instead of
+`UNAUTHORIZED`. A client that compares the status string needs the new one.
+
+## Tests
+
+```bash
+composer install
+vendor/bin/phpunit
+```
+
 ## What is a Kipchak Middleware?
 
 Kipchak Middleware is a standard PHP PSR-15 middleware.

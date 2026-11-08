@@ -58,7 +58,7 @@ class ApiKey
             return $response;
         }
 
-        return Http\Response::json($response,
+        return Http\Response::error($response,
             'Missing or invalid key',
             401
         );
