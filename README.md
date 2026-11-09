@@ -12,7 +12,7 @@ Install it via composer: `composer require kipchak/middleware-auth-key`.
 
 Then just ensure you have appropriate settings configured in `kipchak.auth.key.php` config file in the root of your project.
 
-For a sample, please see: https://1x.ax/mamluk/kipchak/starter/~files/master/config/kipchak.auth.key.php.
+For a sample, please see: https://github.com/kipchak-dev/examples/blob/master/config/kipchak.auth.key.php.
 
 ## Responses
 
