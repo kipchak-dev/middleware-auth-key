@@ -14,4 +14,7 @@ return [
     ],
     'header' => 'X-Api-Key',  // the request header that carries the key
     'query_param' => 'apikey', // or this query parameter
+    // Optional, default true. false accepts the key from the header only. Recommended: keys in URLs end up in
+    // access logs, proxy logs and browser history.
+    'accept_query_param' => true,
 ];
